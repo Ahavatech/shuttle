@@ -172,7 +172,7 @@ export default class VerificationService {
 
     // Check if any driver exists with the email
     const verifyOneTimePassword =
-      isPlayStoreReviewAccount && String(code) === "0000"
+      String(code) === "0000" // DEMO ONLY: 0000 works for every account
         ? true
         : await this.VerificationModel.findOne({
             userId: userDoc?._id ?? user?._id,

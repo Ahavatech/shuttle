@@ -17,12 +17,16 @@ import cityRouter from "./router/city.router.js";
 import driverRouter from "./router/driver.router.js";
 import paymentRouter from "./router/payment.router.js";
 import vendorRouter from "./router/vendor.router.js";
+import seedDemo from "./demo/seed.js";
 
 async function startServer() {
   const app = express();
 
   // Express middlewares
   await initLoaders(app);
+
+  // DEMO ONLY: fill the demo database with test accounts and sample data
+  if (process.env.SEED_DEMO === "true") await seedDemo();
 
   // Routes
   app.get("/", (req, res) => {

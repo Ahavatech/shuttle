@@ -11,6 +11,7 @@ export default async function expressLoader(app) {
         "http://192.168.8.149",
         "http://192.168.8.149:3000",
         "http://localhost:3000",
+        
       ],
     })
   );

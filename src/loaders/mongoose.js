@@ -17,7 +17,7 @@ export default async function mongooseLoader() {
         console.log(successMessage);
       })
       .catch((err) => {
-        console.log(errorMessage);
+        console.log(errorMessage, err.message);
       });
   } else if (config.environment === "staging") {
     connection = await mongoose
